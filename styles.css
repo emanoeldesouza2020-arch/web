@@ -1,0 +1,246 @@
+:root {
+  /* Cores padrão para o tema claro */
+  --body-bg: #ffffff;
+  --card-bg: #f9f9f9;
+  --header-bg: #222222;
+  --text-color: #333333;
+  --link-color: #0066cc;
+  --button-bg: #0066cc;
+  --button-hover: #0055aa;
+  --footer-color: #666666;
+  --error-color: #b00000;
+  --success-color: #008000;
+  --nav-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* Tema escuro alternativo */
+.dark-theme {
+  --body-bg: #111111;
+  --card-bg: #1f1f1f;
+  --header-bg: #000000;
+  --text-color: #f0f0f0;
+  --link-color: #66aaff;
+  --button-bg: #3388ff;
+  --button-hover: #2277dd;
+  --footer-color: #cccccc;
+  --nav-hover: rgba(255, 255, 255, 0.2);
+}
+
+/* Estilos base para todo o corpo da página */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  background: var(--body-bg);
+  color: var(--text-color);
+}
+
+body {
+  min-height: 100vh;
+}
+
+/* Cabeçalho fixo com sombra e navegação responsiva */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--header-bg);
+  color: #ffffff;
+  padding: 10px 20px;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  align-items: center;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  background: var(--nav-hover);
+}
+
+/* Botão de troca de tema no canto da navegação */
+.theme-switcher {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-left: auto;
+}
+
+.theme-switcher button {
+  padding: 8px 12px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: transparent;
+  color: #ffffff;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.theme-switcher button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Espaçamento principal da página para evitar o cabeçalho fixo */
+main {
+  padding: 100px 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 60px;
+  scroll-margin-top: 90px;
+}
+
+section h2 {
+  margin-bottom: 16px;
+  color: var(--text-color);
+}
+
+/* Cartões com sombra e efeito hover */
+.card {
+  background: var(--card-bg);
+  padding: 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+  padding: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.card-body {
+  padding: 0 16px 16px 16px;
+  max-height: 1000px;
+  overflow: hidden;
+  transition: max-height 0.28s ease;
+}
+
+.card.collapsed .card-body {
+  max-height: 0;
+  padding-bottom: 0;
+}
+
+.card .chev {
+  transition: transform 0.25s ease;
+}
+
+.card.collapsed .chev {
+  transform: rotate(-90deg);
+}
+
+.portfolio-list a {
+  color: var(--link-color);
+}
+
+.portfolio-list a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo do formulário e seus campos */
+form {
+  display: grid;
+  gap: 14px;
+  max-width: 700px;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font: inherit;
+  background: #ffffff;
+  color: var(--text-color);
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  width: fit-content;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 4px;
+  background: var(--button-bg);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+button:hover {
+  background: var(--button-hover);
+}
+
+footer {
+  text-align: center;
+  color: var(--footer-color);
+  padding: 20px 0;
+}
+
+/* Mensagens de erro e sucesso no formulário */
+.error {
+  color: var(--error-color);
+  font-size: 0.95rem;
+}
+
+.success {
+  color: var(--success-color);
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 640px) {
+  nav {
+    gap: 10px;
+  }
+
+  .theme-switcher {
+    order: 1;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu Portfólio</title>
+  <!-- Link para o arquivo CSS que contém todo o estilo da página -->
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  <!-- Cabeçalho fixo com navegação para as seções principais -->
+  <header>
+    <nav>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#formacao">Formação</a>
+      <a href="#portfolio">Portfólio</a>
+      <a href="#contato">Contato</a>
+      <div class="theme-switcher">
+        <button id="modoEscuro" type="button">Modo escuro</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Seção Sobre mim com cartão expansível -->
+    <section id="sobre">
+      <h2>Sobre mim</h2>
+      <div class="card" data-collapsible>
+        <div class="card-header" role="button" tabindex="0" aria-expanded="true">
+          <h3>Resumo</h3>
+          <span class="chev">▾</span>
+        </div>
+        <div class="card-body">
+          <p>Olá! Sou um iniciante de ADS e gosto de aprender novas tecnologias. Comecei a tocar guitarra aos 12 anos e hoje também aprecio fotografia.</p>
+          <p>Meus hobbies incluem programação, andar de bicicleta e estudar ferramentas para desenvolvimento web.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Formação com detalhes da educação -->
+    <section id="formacao">
+      <h2>Formação</h2>
+      <div class="card" data-collapsible>
+        <div class="card-header" role="button" tabindex="0" aria-expanded="true">
+          <h3>Detalhes da formação</h3>
+          <span class="chev">▾</span>
+        </div>
+        <div class="card-body">
+          <p><strong>Educação mais recente:</strong> Curso de Análise e Desenvolvimento de Sistemas.</p>
+          <p><strong>Cursos:</strong> React, Dart e Flutter.</p>
+          <p><strong>Atualmente:</strong> Trabalho como costureiro e busco oportunidades na área de tecnologia.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Portfólio com exemplos de projetos -->
+    <section id="portfolio">
+      <h2>Portfólio</h2>
+      <div class="card portfolio-list" data-collapsible>
+        <div class="card-header" role="button" tabindex="0" aria-expanded="true">
+          <h3>Projetos</h3>
+          <span class="chev">▾</span>
+        </div>
+        <div class="card-body">
+          <p>Segue alguns trabalhos já realizados:</p>
+          <ul>
+            <li>App de gerenciamento de pedidos em Flutter.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Contato com formulário simples e validação em JavaScript -->
+    <section id="contato">
+      <h2>Contato</h2>
+      <div class="card">
+        <form id="contatoForm" novalidate>
+          <label>
+            Nome
+            <input type="text" id="nome" name="nome" placeholder="Seu nome">
+          </label>
+          <span class="error" id="erroNome"></span>
+
+          <label>
+            E-mail
+            <input type="email" id="email" name="email" placeholder="seu@email.com">
+          </label>
+          <span class="error" id="erroEmail"></span>
+
+          <label>
+            Mensagem
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+          </label>
+          <span class="error" id="erroMensagem"></span>
+
+          <button type="submit">Enviar mensagem</button>
+          <p class="success" id="sucessoEnvio"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Rodapé simples com agradecimento -->
+  <footer>
+    <p>Obrigado por visitar meu portfólio.</p>
+  </footer>
+
+  <!-- Script JavaScript separado para manter o HTML limpo -->
+  <script src="../js/scripts.js"></script>
+</body>
+</html>
